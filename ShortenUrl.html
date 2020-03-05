@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .form-style-6{
+                font: 95% Arial, Helvetica, sans-serif;
+                max-width: 400px;
+                margin: 10px auto;
+                padding: 16px;
+                background: #F7F7F7;
+            }
+            .form-style-6 h1{
+                background: #1B6EC2;
+                padding: 20px 0;
+                font-size: 140%;
+                font-weight: 300;
+                text-align: center;
+                color: #fff;
+                margin: -16px -16px 16px -16px;
+            }
+            .form-style-6 input[type="text"],
+            .form-style-6 input[type="date"],
+            .form-style-6 input[type="datetime"],
+            .form-style-6 input[type="email"],
+            .form-style-6 input[type="number"],
+            .form-style-6 input[type="search"],
+            .form-style-6 input[type="time"],
+            .form-style-6 input[type="url"],
+            .form-style-6 textarea,
+            .form-style-6 select 
+            {
+                outline: none;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                background: #fff;
+                margin-bottom: 4%;
+                border: 1px solid #ccc;
+                padding: 3%;
+                color: #555;
+                font: 95% Arial, Helvetica, sans-serif;
+            }
+            .form-style-6 input[type="text"]:focus,
+            .form-style-6 input[type="date"]:focus,
+            .form-style-6 input[type="datetime"]:focus,
+            .form-style-6 input[type="email"]:focus,
+            .form-style-6 input[type="number"]:focus,
+            .form-style-6 input[type="search"]:focus,
+            .form-style-6 input[type="time"]:focus,
+            .form-style-6 input[type="url"]:focus,
+            .form-style-6 textarea:focus,
+            .form-style-6 select:focus
+            {
+                box-shadow: 0 0 5px #4FCCB7;
+                padding: 3%;
+                border: 1px solid #3CAE9B;
+            }
+            
+            .form-style-6 input[type="submit"],
+            .form-style-6 input[type="button"]{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                width: 100%;
+                padding: 3%;
+                background: #4FCCB7;
+                border-bottom: 2px solid #3CAE9B;
+                border-top-style: none;
+                border-right-style: none;
+                border-left-style: none;	
+                color: #fff;
+            }
+            .form-style-6 input[type="submit"]:hover,
+            .form-style-6 input[type="button"]:hover{
+                background: #54D9C3;
+            }
+            </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+          <span class="font-semibold text-xl tracking-tight">Shorten Url</span>
+        </div>
+        <div class="block lg:hidden">
+          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <a href="http://192.168.17.110:8080/Track.html" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Track Url
+            </a>
+          </div>
+          <div>
+            <a href="http://192.168.17.110:8080/Index.html" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</a>
+          </div>
+        </div>
+      </nav>
+    <br>
+    <br>
+    <div class="text-center">
+    </div>
+    <br>
+    <form method="post" id="ShortUrlForm" class="form-style-6">
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="Title" id="title"></td>
+            </tr>
+            <tr>
+                <td>Original URL</td>
+                <td><input type="text" name="origin url" id="origin"></td>
+            </tr>
+            <tr>
+                <td>Custom Short URL</td>
+                <td><input type="text" name="custom url" id="short"></td>
+            </tr>
+            <tr>
+                <td><p id="hasilshorten"></p></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Generate"></td>
+            </tr>
+    </form><br>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#ShortUrlForm").submit(function(e){
+      e.preventDefault();
+      var json = {"Title":document.getElementById("title").value, "ShortUrl":document.getElementById("short").value, "Url":document.getElementById("origin").value}
+      var hasil = JSON.stringify(json);
+      console.log(hasil);
+      $.ajax({
+        type: "POST",
+        url: 'http://192.168.17.110:5000/api/Home/ShortUrl',
+        data: hasil,
+        contentType: 'application/json',
+        dataType: 'json',
+          // beforeSend: function (xhr) 
+          //   {   //Include the bearer token in header
+          //   xhr.setRequestHeader("Authorization", jwt);
+          //   },
+        success: function(data)
+        {
+          console.log(data);
+          $("#hasilshorten").append("<a>RESULT : https://192.168.17.110:5001/"+data.shortUrl+"</a>");
+        }
+      });
+    });
+  });
+</script>
+</html>
+  
